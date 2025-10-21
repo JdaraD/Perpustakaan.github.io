@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="/perpustakaan/css/footer.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="/perpustakaan/css/home.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="/perpustakaan/css/index.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="/perpustakaan/css/daftarBuku?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/perpustakaan/css/daftarBuku.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <!-- header start -->

@@ -2,28 +2,39 @@
 
 ?>
 
-<div class="Buku-container">
+<div class="buku-container">
+
+    <div class="container-navigasiBuku">
+
+        <div class="search">
+            <form action="" method="post">
+                <input type="text" name="search" placeholder="Cari buku...">
+                <button type="submit" name="cari">Cari</button>
+            </form>
+
+        </div>
+
+        <div class="aksi">
+            <button class="tambah" name="tambah">tambah buku</button>
+            <button class="hapus" name="hapus">Hapus buku</button>
+        </div>
+    </div>
 
     <div class="container-Buku1">
         <p>kategori buku</p>
     
         <div class="Buku">
             <ul>
-                <li><a href="#">Novel</a></li>
                 <li><a href="#">Pelajaran SD</a></li>
                 <li><a href="#">Pelajaran SMP</a></li>
                 <li><a href="#">Pelajaran SMA</a></li>
+                <li><a href="#">Novel</a></li>
                 <li><a href="#">Komik</a></li>
                 <li><a href="#">Umum</a></li>
             </ul>
         </div>
 
-    </div>
-
-    <div class="container-Buku2">
-        <p>Gendre</p>
-    
-        <div>
+        <div class="genre">
             <ul>
                 <li>
                     <a href="#">Romance</a>
