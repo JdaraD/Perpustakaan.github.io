@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #74ebd5, #ACB6E5);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 40px;
+    border-radius: 15px;
+    height: fit-content;
+    width: 680px;
+    max-width: 720px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container-logo {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-logo p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.container-logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.container-form {
+    flex: 1;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+}
+
+.container-form a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.container-form a:hover {
+    text-decoration: underline;
+    color: #0167d4;
+}
+
+.container-form form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2px;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.container-form h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container-form input[type="text"],
+.container-form input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* jarak antara checkbox dan teks */
+}
+
+.container-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.container-form button:hover {
+    background-color: #45a049;
+} 
+
+
+/* Tablet - layout menumpuk tapi tetap proporsional */
+@media (max-width: 1024px) {
+    .login-container {
+        width: 90%;
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .container-logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container-form h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* HP kecil - layar <480px */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .login-container {
+        width: 100%;
+        padding: 15px;
+        gap: 4px;
+    }
+
+    .container-logo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .container-form input,
+    .container-form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .container-form h3 {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .container-logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container-form {
+        width: 100%;
+    }
+}

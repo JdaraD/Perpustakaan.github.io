@@ -1,0 +1,124 @@
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 0);
+}
+
+.footer-container {
+    display: flex;
+    flex: 1;
+    width: 96%;
+    min-width: 0;
+    padding-top: 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.container-identitas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 4px;
+    padding: 4px;
+}
+
+.identitas-logo {
+    display: flex;
+    gap: 8px;
+    justify-content: left;
+    align-items: center;
+}
+
+.identitas-logo img {
+    width: 50px;
+}
+
+.identitas-logo p {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.container-identitas p {
+    color: white;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.container-address {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-address label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container-address p {
+    color: white;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.container-contact {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-contact label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;  
+}
+
+.container-contact p {
+    color: white;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.footer-bottom {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+
+.footer-bottom p {
+    border-style: solid;
+    border-top-left-radius: 26px;
+    background-color: rgb(255, 255, 255);
+    border-width: fit-content;
+    font-size: 12px;
+    color: black;
+    padding: 8px;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* ubah jadi vertikal */
+        align-items: stretch;
+    }
+}
