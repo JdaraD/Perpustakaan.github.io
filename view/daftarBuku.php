@@ -5,6 +5,7 @@
 <div class="buku-container">
 
     <div class="container-navigasiBuku">
+        <div class="kosong"></div>
 
         <div class="search">
             <form action="" method="post">
@@ -20,10 +21,10 @@
         </div>
     </div>
 
-    <div class="container-Buku1">
+    <div class="container-buku">
         <p>kategori buku</p>
     
-        <div class="Buku">
+        <div class="buku">
             <ul>
                 <li><a href="#">Pelajaran SD</a></li>
                 <li><a href="#">Pelajaran SMP</a></li>
@@ -36,16 +37,14 @@
 
         <div class="genre">
             <ul>
-                <li>
-                    <a href="#">Romance</a>
-                    <a href="#">Action</a>
-                    <a href="#">Horror</a>
-                    <a href="#">Comedy</a>
-                    <a href="#">Fantasi</a>
-                    <a href="#">Humor</a>
-                    <a href="#">Misteri</a>
-                    <a href="#">Spiritual</a>
-                </li>
+                <li><a href="#">Romance</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Horror</a></li>
+                <li><a href="#">Comedy</a></li>
+                <li><a href="#">Fantasi</a></li>
+                <li><a href="#">Humor</a></li>
+                <li><a href="#">Misteri</a></li>
+                <li><a href="#">Spiritual</a></li>   
             </ul>
         </div>
 
@@ -58,8 +57,6 @@
             <th>Tahun</th>
             <th>Jumlah buku</th>
             <th>Aksi</th>
-
-
         </tr>
     </div>
 

@@ -6,29 +6,147 @@
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: aquamarine;
 }
+
+/* container search */
 
 .container-navigasiBuku {
     display: grid;
     width: 100%;
-    align-content: center;
-    justify-content: center;
+    padding: 10px;
     gap: 10px;
     align-items: center;
     grid-template-columns: 1fr auto 1fr;
-    background-color: thistle;
 }
 
 .search {
-    justify-self: center; /* form di tengah */
+    justify-self: center;
+}
+
+.search input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 400px;
+    border: 1px solid #ccc;
+}
+
+.search button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #45a049;
 }
 
 .aksi {
     padding-right: 10px;
-    justify-self: end; /* tombol di pojok kanan */
+    justify-self: end;
 }
 
-.container-navigasiBuku input {
-    width: 400px;
+.aksi .tambah {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
 }
+
+.aksi .tambah:hover{
+    background-color: #45a049;
+}
+
+.aksi .hapus {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f44336;
+}
+
+.aksi .hapus:hover{
+    background-color: #da190b;
+}
+
+.aksi button {
+    color: white;
+    cursor: pointer;
+}
+
+/* container search */
+
+/* container buku */
+
+.container-buku {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.container-buku p {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+}
+
+.container-buku .buku {
+    margin-top: 10px;
+}
+
+.container-buku .buku ul {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+
+.container-buku .buku ul li a {
+    text-transform: capitalize;
+    margin: 5px 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.container-buku .buku ul li a:hover {
+    color: royalblue;
+    text-decoration: underline;
+}
+
+.container-buku .genre {
+    margin-top: 10px;
+}
+
+.container-buku .genre ul {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+
+.container-buku .genre ul li a {
+    text-transform: capitalize;
+    margin: 5px 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.container-buku .genre ul li a:hover {
+    color: royalblue;
+    text-decoration: underline;
+}
+
+/* container buku */
+
+/* container tabel */
+
+
+
+/* container tabel */
