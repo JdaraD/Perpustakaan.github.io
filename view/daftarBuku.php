@@ -17,6 +17,7 @@
 
         <div class="aksi">
             <button class="tambah" name="tambah">tambah buku</button>
+            <button class="edit" name="edit">Edit</button>
             <button class="hapus" name="hapus">Hapus buku</button>
         </div>
     </div>
@@ -25,7 +26,7 @@
         <p>kategori buku</p>
     
         <div class="buku">
-            <ul>
+            <ul id="buku-list">
                 <li><a href="#">Pelajaran SD</a></li>
                 <li><a href="#">Pelajaran SMP</a></li>
                 <li><a href="#">Pelajaran SMA</a></li>
@@ -36,7 +37,7 @@
         </div>
 
         <div class="genre">
-            <ul>
+            <ul id="genre-list">
                 <li><a href="#">Romance</a></li>
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Horror</a></li>
@@ -51,13 +52,32 @@
     </div>
 
     <div class="container-tabel">
-        <tr>
-            <th>judul Buku</th>
-            <th>Pencipta</th>
-            <th>Tahun</th>
-            <th>Jumlah buku</th>
-            <th>Aksi</th>
-        </tr>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>judul Buku</th>
+                <th>Pencipta</th>
+                <th>Tahun</th>
+                <th>kategori</th>
+                <th>genre buku</th>
+                <th>Aksi</th>
+            </tr>
+            <?php for ($i = 1; $i <= 10; $i++) : ?>
+            <tr>
+                <td><?= $i; ?></td>
+                <td>sadasdasdasdasd</td>
+                <td>asdasdasdsa</td>
+                <td>asdasdasdasdasdasdas</td>
+                <td>asdasdasdasd</td>
+                <td>asdasdasdasd</td>
+                <td>
+                    <a href="" class="baca">Baca</a> |
+                    <a href="" class="download">Download</a>
+                </td>
+            </tr>
+            <?php endfor; ?>
+
+        </table>
     </div>
 
 </div>
