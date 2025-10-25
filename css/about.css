@@ -1,0 +1,57 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 88%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.container-header-about {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+.logo-about {
+    width: 160px;
+    height: 170px;
+}
+
+.logo-about img {
+    width: 150px;
+    height: auto;
+
+}
+
+.title-about {
+    width: 100%;
+}
+
+.title-about h1 {
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+}
+
+.title-about p {
+    font-size: 18px;
+    color: rgb(80, 80, 80);
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.content-about {
+    width: 100%;
+}
+
+.content-about ul{
+    margin-left: 20px;   
+}
+
+.content-about li {
+    font-size: 18px;
+    text-align: justify;
+}

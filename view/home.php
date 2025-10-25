@@ -17,7 +17,7 @@
         <div>7</div>
     </div>
 
-    <a href="view/daftarBuku.php">Selengkapnya</a>
+    <a href="/perpustakaan/?page=daftarBuku">Selengkapnya</a>
 </div>
 <!-- page content end -->
 

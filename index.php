@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="/perpustakaan/css/footer.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="/perpustakaan/css/home.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="/perpustakaan/css/daftarBuku.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/perpustakaan/css/about.css?v=<?php echo time(); ?>">
 
 </head>
 <body>

@@ -13,7 +13,7 @@
                 <ul>
                     <li><a href="/perpustakaan/?page=home">Home</a></li>
                     <li><a href="/perpustakaan/?page=daftarBuku">Daftar Buku</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="/perpustakaan/?page=about">About</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>

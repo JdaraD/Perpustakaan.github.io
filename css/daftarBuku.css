@@ -157,6 +157,51 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+.container-buku .mapel{
+    margin-top: 10px;
+}
+
+.container-buku .mapel ul {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+
+.container-buku .mapel ul li a {
+    text-transform: capitalize;
+    margin: 5px 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#mapel-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+#mapel-list li {
+    padding: 4px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#mapel-list li:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+#mapel-list li.active {
+    outline: 3px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
 .container-buku .genre {
     margin-top: 10px;
 }

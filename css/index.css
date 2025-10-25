@@ -6,6 +6,7 @@
 
 html, body {
     height: 100%;
+    user-select: none;
 }
 
 body {
@@ -16,4 +17,11 @@ body {
 
 main{
     flex: 1;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

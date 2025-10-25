@@ -30,9 +30,20 @@
                 <li><a href="#">Pelajaran SD</a></li>
                 <li><a href="#">Pelajaran SMP</a></li>
                 <li><a href="#">Pelajaran SMA</a></li>
+                <li><a href="#">Pelajaran SMK</a></li>
                 <li><a href="#">Novel</a></li>
                 <li><a href="#">Komik</a></li>
                 <li><a href="#">Umum</a></li>
+            </ul>
+        </div>
+
+        <div class="mapel">
+            <ul id="mapel-list">
+                <li><a href="">MTK</a></li>
+                <li><a href="">IPA</a></li>
+                <li><a href="">IPS</a></li>
+                <li><a href="">PKN</a></li>
+                <li><a href="">OLAHRAGA</a></li>
             </ul>
         </div>
 

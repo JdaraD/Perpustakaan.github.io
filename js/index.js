@@ -32,3 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// mapel random color
+document.addEventListener('DOMContentLoaded', () => {
+    const mapelItems = document.querySelectorAll('#mapel-list li');
+
+    mapelItems.forEach(item => {
+        // warna acak
+        const randomColor = `hsl(${Math.random() *360}, 70%, 70%)`;
+        item.style.backgroundColor = randomColor;
+
+        // event klik
+        item.addEventListener('click', () => {
+            mapelItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+});
