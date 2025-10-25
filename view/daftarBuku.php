@@ -16,11 +16,78 @@
         </div>
 
         <div class="aksi">
-            <button class="tambah" name="tambah">tambah buku</button>
+            <button class="tambah" name="tambah" onclick="openTambah()">tambah buku</button>
             <button class="edit" name="edit">Edit</button>
             <button class="hapus" name="hapus">Hapus buku</button>
         </div>
     </div>
+
+    <!-- overlay tambah -->
+    <div id="tambah">
+        <div class="overlay-tambah">
+            <div class="container-form">
+                <form action="" method="post">
+                    <h2>Tambah Buku</h2>
+                    <label for="judul">Judul Buku :</label>
+                    <input type="text" id="judul" name="judul" required>
+    
+                    <label for="gambar">Sampul Buku :</label>
+                    <input type="file" id="gambar" name="gambar" required>
+    
+                    <label for="pencipta">Pencipta :</label>
+                    <input type="text" id="pencipta" name="pencipta" required>
+    
+                    <label for="tahun">Tahun Terbit :</label>
+                    <input type="number" id="tahun" name="tahun" required>
+    
+                    <label for="kategori">Kategori :</label>
+                    <select name="kategori" id="kategori" required>
+                        <option value="" disabled selected>Pilih kategori....</option>
+                        <option value="pelajaran_sd">Pelajaran SD</option>
+                        <option value="pelajaran_smp">Pelajaran SMP</option>
+                        <option value="pelajaran_sma">Pelajaran SMA</option>
+                        <option value="pelajaran_smk">Pelajaran SMK</option>
+                        <option value="novel">Novel</option>
+                        <option value="komik">Komik</option>
+                        <option value="umum">Umum</option>
+                    </select>
+    
+                    <label for="tema">Tema :</label>
+                    <select name="tema" id="tema">
+                        <option value="" disabled selected>Pilih tema....</option>
+                        <optgroup label="Pelajaran Sekolah">
+                            <option value="mtk">MTK</option>
+                            <option value="ipa">IPA</option>
+                            <option value="ips">IPS</option>
+                            <option value="pkn">PKN</option>
+                            <option value="olahraga">OLAHRAGA</option>
+                        </optgroup>
+                        <optgroup label="Genre">
+                            <option value="romance">Romance</option>
+                            <option value="action">Action</option>
+                            <option value="horror">Horror</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="fantasi">Fantasi</option>
+                            <option value="humor">Humor</option>
+                            <option value="misteri">Misteri</option>
+                            <option value="spiritual">Spiritual</option>
+                        </optgroup>
+                    </select>
+    
+                    <label for="tahapan">Tahapan :</label>
+                    <input type="text" id="tahapan" name="tahapan" placeholder="kelas atau eps" required>
+    
+                    <div class="container-form-btn">
+                        <button type="submit" name="submit" class="tambah">Tambah</button>
+                        <button type="button" onclick="closeTambah()" class="batal">Batal</button>
+    
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+    </div>
+    <!-- overlay tambah -->
 
     <div class="container-buku">
         <p>kategori buku</p>

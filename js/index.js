@@ -50,3 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// overlay form tambah buku
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('tambah');
+  const formContainer = document.querySelector('.container-form');
+
+  overlay.addEventListener('click', (e) => {
+    // Jika area yang diklik bukan form di tengah, maka tutup
+    if (!formContainer.contains(e.target)) {
+      closeTambah();
+    }
+  });
+});
+
+function openTambah() {
+    document.getElementById("tambah").style.display = "block";
+    document.body.classList.add("no-scroll");
+};
+
+function closeTambah() {
+    document.getElementById("tambah").style.display = "none";
+    document.body.classList.remove("no-scroll");
+};

@@ -43,6 +43,9 @@
 .search button:hover {
     background-color: #45a049;
 }
+/* container search */
+
+/* container aksi */
 
 .aksi {
     padding-right: 10px;
@@ -88,7 +91,110 @@
 }
 
 
-/* container search */
+/* container aksi */
+
+/* overlay */
+#tambah {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+    /* visibility: hidden; */
+    /* opacity: 0; */
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.overlay-tambah {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: #e87dc8;
+    border-radius: 8px;
+     z-index: 1001;
+}
+
+.container-form form {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.container-form form label {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.container-form form input {
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.container-form form select {
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.container-form-btn {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.container-form-btn button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.container-form-btn .tambah {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.container-form-btn .tambah:hover {
+    background-color: #45a049;
+}
+
+.container-form-btn .batal {
+    background-color: #f44336;
+    color: white;
+}
+
+.container-form-btn .batal:hover {
+    background-color: #da190b;
+}
+
+/* overlay */
+
+/* panjang container form untuk mobile 324px */
 
 /* container buku */
 
