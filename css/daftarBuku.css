@@ -290,8 +290,26 @@ body.no-scroll {
 }
 
 
-
 /* overlay edit buku */
+
+/* pesan edit buku */
+
+#pesanEdit {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* hijau sukses */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    font-weight: bold;
+    z-index: 9999;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+/* pesan edit buku */
 
 /* panjang container form untuk mobile 324px */
 

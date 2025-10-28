@@ -56,6 +56,17 @@
         }
     }
 
+    // fungsi update
+    if ( isset($_POST["update"]) ) {
+        if ( editBuku($_POST) > 0) {
+            $editBerhasil = true;
+        } else {
+            $editGagal = true;
+        }
+    }
+
+    // load selection edit
+
 ?>
 
 <!DOCTYPE html>

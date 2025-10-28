@@ -77,7 +77,7 @@
     <div id="pesan">
         <div class="pesan-tambah">
             <div class="tambah-pesan">
-                <?php if( isset($tambahBerhasil)) { ;?>
+                <?php if( isset($tambahBerhasil)) { ; ?>
                 <p>Buku berhasil ditambahkan!</p>
                 <?php } elseif( isset($tambahGagal)) { ;?>
                 <p>Buku gagal ditambahkan!</p>
@@ -110,13 +110,13 @@
                     <select name="kategori_id" id="kategori" required>
                         <option value="" disabled selected>Pilih kategori....</option>
                         <?php foreach($kategori as $kat) : ?>
-                        <option value="<?= $kat["id"] ;?>"><?= $kat["kategori"] ;?></option>
+                        <option value="<?= $kat["id"] ;?>"><?= $kat["Kategori_nama"] ;?></option>
                         <?php endforeach; ?>
                     </select>
     
                     <label for="tema">Tema :</label>
                     <select name="tema_id" id="tema">
-                        <option value="" disabled selected>Pilih tema....</option>
+                        <option value="" disabled selected><?= $child['jenis'] ; ?></option>
                         <?php foreach ($grouped[0] as $parent) : ?>
                             <optgroup label="<?= htmlspecialchars($parent['jenis']) ?>">
                                 <?php if (!empty($grouped[$parent['id']])) : ?>
@@ -132,7 +132,7 @@
                     <input type="text" id="tahapan" name="tahapan" placeholder="kelas atau eps" required>
     
                     <div class="container-form-edit-btn">
-                        <button type="submit" name="sumbit" class="update">Update</button>
+                        <button type="submit" name="update" class="update">Update</button>
                         <button type="button" onclick="closeEdit()" class="batal">Batal</button>
     
                     </div>
@@ -143,6 +143,20 @@
     </div>
 
     <!-- overlay edit -->
+
+    <!-- pesan edit berhasil -->
+    <div id="pesanEdit">
+        <div class="container-pesan">
+            <div class="pesan-edit">
+                <?php if( isset($editBerhasil)) { ; ?>
+                    <p>Buku berhasil diedit!</p>
+                <?php } elseif (isset($editGagal)) { ; ?>
+                    <p>Buku gagal diedit</p>
+                <?php } ; ?>
+            </div>
+        </div>
+    </div>
+    <!-- pesan edit berhasil -->
 
     <div class="container-buku">
         <p>kategori buku</p>
@@ -211,7 +225,7 @@
                 <td>
                     <a href="" class="baca">Baca</a> |
                     <a href="" class="download">Download</a> |
-                    <button class="edit" name="edit" onclick="openEdit()">Edit</button> |
+                    <button class="edit" name="edit" onclick="openEdit(<?= $dB['id'];?>)">Edit</button> |
                     <button class="hapus" name="hapus">Hapus buku</button>
                 </td>
             </tr>

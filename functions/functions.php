@@ -168,4 +168,8 @@
 
         return $namaFileBaru;
     }
+
+    function editBuku() {
+        
+    }
 ?>
