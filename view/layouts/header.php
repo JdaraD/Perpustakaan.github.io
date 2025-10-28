@@ -10,7 +10,7 @@
         </div>
         <div style="flex-grow: 3;" class="container-nav">
             <nav>
-                <ul>
+                <ul id="navbar">
                     <li><a href="/perpustakaan/?page=home">Home</a></li>
                     <li><a href="/perpustakaan/?page=daftarBuku">Daftar Buku</a></li>
                     <li><a href="/perpustakaan/?page=about">About</a></li>
