@@ -73,3 +73,15 @@ function closeTambah() {
     document.getElementById("tambah").style.display = "none";
     document.body.classList.remove("no-scroll");
 };
+
+// notifikasi tambah buku
+document.addEventListener("DOMContentLoaded", function() {
+    const pesan = document.getElementById("pesan");
+    if (pesan && pesan.innerText.trim() !== "") {
+      pesan.style.display = "block";
+      setTimeout(() => {
+        pesan.style.display = "none";
+        window.location.href = "index.php?page=daftarBuku";
+      }, 3000);
+    }
+})

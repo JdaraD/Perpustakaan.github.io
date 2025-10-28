@@ -74,6 +74,21 @@
     </div>
     <!-- overlay tambah -->
 
+    <!-- pesan tambah berhasil -->
+    <div id="pesan">
+        <div class="pesan-tambah">
+            <div class="tambah-pesan">
+                <?php if( isset($tambahBerhasil)) { ;?>
+                <p>Buku berhasil ditambahkan!</p>
+                <?php } elseif( isset($tambahGagal)) { ;?>
+                <p>Buku gagal ditambahkan!</p>
+                <?php } ;?>
+
+            </div>
+        </div>
+    </div>
+    <!-- pesan tambah berhasil -->
+
     <div class="container-buku">
         <p>kategori buku</p>
     
@@ -91,11 +106,11 @@
 
         <div class="mapel">
             <ul id="mapel-list">
-                <li><a href="">MTK</a></li>
-                <li><a href="">IPA</a></li>
-                <li><a href="">IPS</a></li>
-                <li><a href="">PKN</a></li>
-                <li><a href="">OLAHRAGA</a></li>
+                <li><a href="#">MTK</a></li>
+                <li><a href="#">IPA</a></li>
+                <li><a href="#">IPS</a></li>
+                <li><a href="#">PKN</a></li>
+                <li><a href="#">OLAHRAGA</a></li>
             </ul>
         </div>
 

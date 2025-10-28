@@ -27,19 +27,9 @@
     // fungsi tambah
     if ( isset($_POST["sumbit"]) ) {
         if ( tambahBuku($_POST) > 0 ) {
-            echo "
-                <script>
-                    alert('Buku berhasil ditambahkan!');
-                    document.location.href = 'index.php?page=daftarBuku';
-                </script>
-            ";
+            $tambahBerhasil = true;
         } else {
-            echo "
-                <script>
-                    alert('Buku gagal ditambahkan!');
-                    document.location.href = 'index.php?page=daftarBuku';
-                </script>
-            ";
+            $tambahGagal = true;
         }
     }
 
