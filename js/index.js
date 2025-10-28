@@ -85,3 +85,27 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 3000);
     }
 })
+
+
+// overlay form edit buku
+document.addEventListener('DOMContentLoaded', () => {
+  const overlayEdit = document.getElementById('edit');
+  const formContainerEdit = document.querySelector('.container-form-edit');
+
+  overlayEdit.addEventListener('click', (e) => {
+    // Jika area yang diklik bukan form di tengah, maka tutup
+    if (!formContainerEdit.contains(e.target)) {
+      closeEdit();
+    }
+  });
+});
+
+function openEdit() {
+  document.getElementById("edit").style.display = "block";
+  document.body.classList.add("no-scroll");
+};
+
+function closeEdit() {
+  document.getElementById("edit").style.display = "none";
+  document.body.classList.remove("no-scroll");
+}

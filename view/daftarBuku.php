@@ -13,8 +13,6 @@
 
         <div class="aksi">
             <button class="tambah" name="tambah" onclick="openTambah()">tambah buku</button>
-            <button class="edit" name="edit">Edit</button>
-            <button class="hapus" name="hapus">Hapus buku</button>
         </div>
     </div>
 
@@ -40,23 +38,24 @@
                     <select name="kategori_id" id="kategori" required>
                         <option value="" disabled selected>Pilih kategori....</option>
                         <?php foreach($kategori as $kat) : ?>
-                        <option value="<?= $kat["id"] ;?>"><?= $kat["kategori"] ;?></option>
+                        <option value="<?= $kat["id"] ;?>"><?= $kat["Kategori_nama"] ;?></option>
                         <?php endforeach; ?>
                     </select>
     
                     <label for="tema">Tema :</label>
                     <select name="tema_id" id="tema">
                         <option value="" disabled selected>Pilih tema....</option>
-                        <optgroup label="Pelajaran Sekolah">
-                            <?php foreach($mapel as $map) : ?>
-                            <option value="<?= $map["id"] ; ?>"><?= $map["mapel"] ; ?></option>
-                            <?php endforeach; ?>
-                        </optgroup>
-                        <optgroup label="Genre">
-                            <?php foreach($genre as $gen) : ?>
-                            <option value="<?= $gen["id"] ; ?>"><?= $gen["genre"] ; ?></option>
-                            <?php endforeach; ?>
-                        </optgroup>
+
+                        <?php foreach ($grouped[0] as $parent) : ?>
+                            <optgroup label="<?= htmlspecialchars($parent['jenis']) ?>">
+                                <?php if (!empty($grouped[$parent['id']])) : ?>
+                                    <?php foreach ($grouped[$parent['id']] as $child) : ?>
+                                        <option value="<?= $child['id'] ?>"><?= htmlspecialchars($child['jenis']) ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </optgroup>
+                        <?php endforeach; ?>
+
                     </select>
     
                     <label for="tahapan">Tahapan :</label>
@@ -88,6 +87,62 @@
         </div>
     </div>
     <!-- pesan tambah berhasil -->
+
+    <!-- overlay edit -->
+    <div id="edit">
+        <div class="overlay-edit">
+            <div class="container-form-edit">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <h2>Edit Buku</h2>
+                    <label for="judul_buku">Judul Buku :</label>
+                    <input type="text" id="judul" name="judul_buku" required>
+    
+                    <label for="gambar">Sampul Buku :</label>
+                    <input type="file" id="gambar" name="gambar" required>
+    
+                    <label for="pencipta">Pencipta :</label>
+                    <input type="text" id="pencipta" name="pencipta" required>
+    
+                    <label for="tahun_terbit">Tahun Terbit :</label>
+                    <input type="date" id="tahun" name="tahun_terbit" required>
+    
+                    <label for="kategori">Kategori :</label>
+                    <select name="kategori_id" id="kategori" required>
+                        <option value="" disabled selected>Pilih kategori....</option>
+                        <?php foreach($kategori as $kat) : ?>
+                        <option value="<?= $kat["id"] ;?>"><?= $kat["kategori"] ;?></option>
+                        <?php endforeach; ?>
+                    </select>
+    
+                    <label for="tema">Tema :</label>
+                    <select name="tema_id" id="tema">
+                        <option value="" disabled selected>Pilih tema....</option>
+                        <?php foreach ($grouped[0] as $parent) : ?>
+                            <optgroup label="<?= htmlspecialchars($parent['jenis']) ?>">
+                                <?php if (!empty($grouped[$parent['id']])) : ?>
+                                    <?php foreach ($grouped[$parent['id']] as $child) : ?>
+                                        <option value="<?= $child['id'] ?>"><?= htmlspecialchars($child['jenis']) ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </optgroup>
+                        <?php endforeach; ?>
+                    </select>
+    
+                    <label for="tahapan">Tahapan :</label>
+                    <input type="text" id="tahapan" name="tahapan" placeholder="kelas atau eps" required>
+    
+                    <div class="container-form-edit-btn">
+                        <button type="submit" name="sumbit" class="update">Update</button>
+                        <button type="button" onclick="closeEdit()" class="batal">Batal</button>
+    
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- overlay edit -->
 
     <div class="container-buku">
         <p>kategori buku</p>
@@ -142,22 +197,26 @@
                 <th>Tahapan</th>
                 <th>Aksi</th>
             </tr>
-            <?php for ($i = 1; $i <= 10; $i++) : ?>
+            <?php $i = 1; ?>
+            <?php foreach($daftarBuku as $dB) : ?>
             <tr>
                 <td><?= $i; ?></td>
-                <td>sadasdasdasdasdsaddd</td>
-                <td><img src="/perpustakaan/img/logo.png" alt=""></td>
-                <td>asdasdasdsa</td>
-                <td>2021</td>
-                <td>asdasdasdasd</td>
-                <td>asdasdasdasd</td>
-                <td>kelas 1</td>
+                <td><?= $dB['judul_buku'] ;?></td>
+                <td><img src="img/<?= $dB['gambar'] ;?>" alt=""></td>
+                <td><?= $dB['pencipta'] ;?></td>
+                <td><?= $dB['tahun_terbit'] ;?></td>
+                <td><?= $dB['kategori'] ;?></td>
+                <td><?= $dB['buku'] ;?></td>
+                <td><?= $dB['tahapan'] ;?></td>
                 <td>
                     <a href="" class="baca">Baca</a> |
-                    <a href="" class="download">Download</a>
+                    <a href="" class="download">Download</a> |
+                    <button class="edit" name="edit" onclick="openEdit()">Edit</button> |
+                    <button class="hapus" name="hapus">Hapus buku</button>
                 </td>
             </tr>
-            <?php endfor; ?>
+            <?php $i++; ?>
+            <?php endforeach; ?>
 
         </table>
     </div>

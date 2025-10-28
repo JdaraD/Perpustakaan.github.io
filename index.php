@@ -21,8 +21,31 @@
 
     // load data dari database
     $kategori = query("SELECT * FROM kategoris");
-    $genre = query("SELECT * FROM genres");
-    $mapel = query("SELECT * FROM mapels");
+
+    $daftarBuku = query("
+    SELECT 
+        db.id,
+        db.judul_buku,
+        db.gambar,
+        db.pencipta,
+        db.tahun_terbit,
+        kg.Kategori_nama AS kategori,
+        js.jenis AS buku,
+        db.tahapan
+        FROM daftar_buku AS db
+        LEFT JOIN kategoris AS kg ON db.kategori_id = kg.id
+        LEFT JOIN buku AS js ON db.tema_id = js.id
+    
+    ");
+
+
+    // load selection buku
+    $querybuku = mysqli_query($conn, "SELECT * FROM buku ORDER BY parent_id, id");
+
+    $grouped = [];
+    while ($row = mysqli_fetch_assoc($querybuku)) {
+        $grouped[$row['parent_id']][] = $row;
+    }
 
     // fungsi tambah
     if ( isset($_POST["sumbit"]) ) {

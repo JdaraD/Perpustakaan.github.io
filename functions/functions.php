@@ -113,10 +113,10 @@
             return false;
         }
 
-        $query = "INSERT INTO daftar_buku
-                  VALUES
-                  ('', '$judul', '$gambar', '$pencipta', '$tahun', '$kategori', '$tema', '$tahapan','','')
-                 ";
+        $query = "INSERT INTO daftar_buku 
+          (`judul_buku`, `gambar`, `pencipta`, `tahun_terbit`, `kategori_id`, `tema_id`, `tahapan`, `created_at`, `updated_at`)
+          VALUES
+          ('$judul', '$gambar', '$pencipta', '$tahun', '$kategori', '$tema', '$tahapan', NOW(), NOW())";
         
         mysqli_query($conn, $query);
 
@@ -164,7 +164,7 @@
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensiGambar;
 
-        move_uploaded_file($tmpName, '../img/' . $namaFileBaru);
+        move_uploaded_file($tmpName, __DIR__ . '/../img/' . $namaFileBaru);
 
         return $namaFileBaru;
     }
