@@ -19,6 +19,30 @@
         $page_file = __DIR__ . "/view/404.php";
     }
 
+    // load data dari database
+    $kategori = query("SELECT * FROM kategoris");
+    $genre = query("SELECT * FROM genres");
+    $mapel = query("SELECT * FROM mapels");
+
+    // fungsi tambah
+    if ( isset($_POST["sumbit"]) ) {
+        if ( tambahBuku($_POST) > 0 ) {
+            echo "
+                <script>
+                    alert('Buku berhasil ditambahkan!');
+                    document.location.href = 'index.php?page=daftarBuku';
+                </script>
+            ";
+        } else {
+            echo "
+                <script>
+                    alert('Buku gagal ditambahkan!');
+                    document.location.href = 'index.php?page=daftarBuku';
+                </script>
+            ";
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>

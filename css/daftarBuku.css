@@ -388,6 +388,16 @@ body.no-scroll {
     border: 1px solid #000000;
     padding: 4px;
     text-align: center;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 200px;
+}
+
+.container-tabel table td img {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
 }
 
 .baca {

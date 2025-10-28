@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <div class="buku-container">
 
     <div class="container-navigasiBuku">
@@ -26,10 +22,10 @@
     <div id="tambah">
         <div class="overlay-tambah">
             <div class="container-form">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <h2>Tambah Buku</h2>
-                    <label for="judul">Judul Buku :</label>
-                    <input type="text" id="judul" name="judul" required>
+                    <label for="judul_buku">Judul Buku :</label>
+                    <input type="text" id="judul" name="judul_buku" required>
     
                     <label for="gambar">Sampul Buku :</label>
                     <input type="file" id="gambar" name="gambar" required>
@@ -37,40 +33,29 @@
                     <label for="pencipta">Pencipta :</label>
                     <input type="text" id="pencipta" name="pencipta" required>
     
-                    <label for="tahun">Tahun Terbit :</label>
-                    <input type="number" id="tahun" name="tahun" required>
+                    <label for="tahun_terbit">Tahun Terbit :</label>
+                    <input type="date" id="tahun" name="tahun_terbit" required>
     
                     <label for="kategori">Kategori :</label>
-                    <select name="kategori" id="kategori" required>
+                    <select name="kategori_id" id="kategori" required>
                         <option value="" disabled selected>Pilih kategori....</option>
-                        <option value="pelajaran_sd">Pelajaran SD</option>
-                        <option value="pelajaran_smp">Pelajaran SMP</option>
-                        <option value="pelajaran_sma">Pelajaran SMA</option>
-                        <option value="pelajaran_smk">Pelajaran SMK</option>
-                        <option value="novel">Novel</option>
-                        <option value="komik">Komik</option>
-                        <option value="umum">Umum</option>
+                        <?php foreach($kategori as $kat) : ?>
+                        <option value="<?= $kat["id"] ;?>"><?= $kat["kategori"] ;?></option>
+                        <?php endforeach; ?>
                     </select>
     
                     <label for="tema">Tema :</label>
-                    <select name="tema" id="tema">
+                    <select name="tema_id" id="tema">
                         <option value="" disabled selected>Pilih tema....</option>
                         <optgroup label="Pelajaran Sekolah">
-                            <option value="mtk">MTK</option>
-                            <option value="ipa">IPA</option>
-                            <option value="ips">IPS</option>
-                            <option value="pkn">PKN</option>
-                            <option value="olahraga">OLAHRAGA</option>
+                            <?php foreach($mapel as $map) : ?>
+                            <option value="<?= $map["id"] ; ?>"><?= $map["mapel"] ; ?></option>
+                            <?php endforeach; ?>
                         </optgroup>
                         <optgroup label="Genre">
-                            <option value="romance">Romance</option>
-                            <option value="action">Action</option>
-                            <option value="horror">Horror</option>
-                            <option value="comedy">Comedy</option>
-                            <option value="fantasi">Fantasi</option>
-                            <option value="humor">Humor</option>
-                            <option value="misteri">Misteri</option>
-                            <option value="spiritual">Spiritual</option>
+                            <?php foreach($genre as $gen) : ?>
+                            <option value="<?= $gen["id"] ; ?>"><?= $gen["genre"] ; ?></option>
+                            <?php endforeach; ?>
                         </optgroup>
                     </select>
     
@@ -78,7 +63,7 @@
                     <input type="text" id="tahapan" name="tahapan" placeholder="kelas atau eps" required>
     
                     <div class="container-form-btn">
-                        <button type="submit" name="submit" class="tambah">Tambah</button>
+                        <button type="submit" name="sumbit" class="tambah">Tambah</button>
                         <button type="button" onclick="closeTambah()" class="batal">Batal</button>
     
                     </div>
@@ -134,20 +119,24 @@
             <tr>
                 <th>No</th>
                 <th>judul Buku</th>
+                <th>gambar</th>
                 <th>Pencipta</th>
                 <th>Tahun</th>
                 <th>kategori</th>
                 <th>genre buku</th>
+                <th>Tahapan</th>
                 <th>Aksi</th>
             </tr>
             <?php for ($i = 1; $i <= 10; $i++) : ?>
             <tr>
                 <td><?= $i; ?></td>
-                <td>sadasdasdasdasd</td>
+                <td>sadasdasdasdasdsaddd</td>
+                <td><img src="/perpustakaan/img/logo.png" alt=""></td>
                 <td>asdasdasdsa</td>
-                <td>asdasdasdasdasdasdas</td>
+                <td>2021</td>
                 <td>asdasdasdasd</td>
                 <td>asdasdasdasd</td>
+                <td>kelas 1</td>
                 <td>
                     <a href="" class="baca">Baca</a> |
                     <a href="" class="download">Download</a>
