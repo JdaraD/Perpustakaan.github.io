@@ -109,3 +109,23 @@ function closeEdit() {
   document.getElementById("edit").style.display = "none";
   document.body.classList.remove("no-scroll");
 }
+
+// fungsi overlay view
+
+document.addEventListener('DOMContentLoaded', () => {
+  const overlayView = document.getElementById('view');
+  const formContainerView = document.querySelector('.container-view');
+
+  overlayView.addEventListener('click', (e) => {
+    // Jika area yang diklik bukan form di tengah, maka tutup
+    if (!formContainerView.contains(e.target)) {
+      closeView();
+    }
+  });
+});
+
+function openView(id){
+  const iframe = document.querySelector('#view iframe');
+  iframe.src = "viewDokumen.php?id=" + id + "&t=" + new Date().getTime(); // ✅ benar
+  document.getElementById('view').style.display = "block";
+}

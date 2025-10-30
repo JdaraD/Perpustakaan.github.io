@@ -108,15 +108,21 @@
         $tahapan = htmlspecialchars($data["tahapan"]);
 
         // upload gambar
-        $gambar = upload();
+        $gambar = uploadGambar();
         if ( !$gambar ) {
             return false;
         }
 
+        // upload buku (pdf/doc)
+        $buku = uploadDokumen() ;
+        if ( !$buku ) {
+            return false;
+        }
+
         $query = "INSERT INTO daftar_buku 
-          (`judul_buku`, `gambar`, `pencipta`, `tahun_terbit`, `kategori_id`, `tema_id`, `tahapan`, `created_at`, `updated_at`)
+          (`judul_buku`, `gambar`, `pencipta`, `tahun_terbit`, `kategori_id`, `tema_id`, `tahapan`, `buku`, `created_at`, `updated_at`)
           VALUES
-          ('$judul', '$gambar', '$pencipta', '$tahun', '$kategori', '$tema', '$tahapan', NOW(), NOW())";
+          ('$judul', '$gambar', '$pencipta', '$tahun', '$kategori', '$tema', '$tahapan', '$buku', NOW(), NOW())";
         
         mysqli_query($conn, $query);
 
@@ -124,7 +130,7 @@
     }
 
     // fungsi upload gambar
-    function upload() {
+    function uploadGambar() {
         $namaFile = $_FILES['gambar']['name'];
         $ukuranFile = $_FILES['gambar']['size'];
         $error = $_FILES['gambar']['error'];
@@ -169,7 +175,83 @@
         return $namaFileBaru;
     }
 
-    function editBuku() {
-        
+    // fungsi upload dokumen
+
+    function uploadDokumen() {
+        $nameFile = $_FILES['buku']['name'];
+        $ukuranFile = $_FILES['buku']['size'];
+        $error = $_FILES['buku']['error'];
+        $tmpName = $_FILES['buku']['tmp_name'];
+
+        // cek apakah tidak ada file yg di upload
+        if ( $error === 4 ) {
+            echo "<script>
+                    alert('upload file buku');
+                  </script>";
+            return false;
+        }
+
+        // cek apakah yg diupload file pdf atau word
+        $ekstensiFileValid = ['pdf','doc','docx'];
+        $ekstensiFile = explode('.', $nameFile);
+        $ekstensiFile = strtolower(end($ekstensiFile));
+
+        if ( !in_array($ekstensiFile, $ekstensiFileValid) ) {
+            echo "<script>
+                    alert('yang anda upload bukan dokumen');
+                  </script>";
+            return false;
+        }
+
+        // cek ukuran
+        if ( $ukuranFile > 5000000) {
+            echo "<script>
+                    alert('ukuran file terlalu besar');
+                  </script>";
+            return false;
+        }
+
+        // lolos pengecekan
+        $nameFileBaru = uniqid();
+        $nameFileBaru .= '.';
+        $nameFileBaru .= $ekstensiFile;
+
+        move_uploaded_file($tmpName, 'books/' .$nameFileBaru);
+
+        return $nameFileBaru;
+
     }
+
+    // fungsi view dokumen
+    if (isset($_GET['id'])) {
+        $id = (int) $_GET['id'];
+
+        $result = mysqli_query($conn, "SELECT * FROM daftarbuku WHERE id = $id");
+
+        if (mysqli_num_rows($result) === 1) {
+            $data = mysqli_fetch_assoc($result);
+            $file = 'books/' . $data['buku'];
+
+            if (!file_exists($file)) {
+                echo "File tidak ditemukan.";
+                exit;
+            }
+
+            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+
+            if ($ext === 'pdf') {
+                header('Content-type: application/pdf');
+                header('Content-Disposition: inline; filename="' . basename($file) . '"');
+                readfile($file);
+            } elseif (in_array($ext, ['doc', 'docx'])) {
+                $fileUrl = "http://localhost/projekmu/" . $file; // ganti sesuai path kamu
+                echo "<iframe src='https://docs.google.com/gview?url=$fileUrl&embedded=true' 
+                        style='width:100%;height:100vh;' frameborder='0'></iframe>";
+            } else {
+                echo "Format file tidak didukung.";
+            }
+
+        } 
+    }
+
 ?>

@@ -60,6 +60,9 @@
     
                     <label for="tahapan">Tahapan :</label>
                     <input type="text" id="tahapan" name="tahapan" placeholder="kelas atau eps" required>
+
+                    <label for="buku">Buku :</label>
+                    <input type="file" name="buku" id="buku" placeholder="upload file pdf atau word" required>
     
                     <div class="container-form-btn">
                         <button type="submit" name="sumbit" class="tambah">Tambah</button>
@@ -158,6 +161,14 @@
     </div>
     <!-- pesan edit berhasil -->
 
+    <!-- overlay view -->
+    <div id="view">
+        <div class="container-view">
+            <iframe src="" frameborder="0" style="width:100%; height:90vh;"></iframe>
+        </div>
+    </div>
+    <!-- overlay view -->
+
     <div class="container-buku">
         <p>kategori buku</p>
     
@@ -223,9 +234,9 @@
                 <td><?= $dB['buku'] ;?></td>
                 <td><?= $dB['tahapan'] ;?></td>
                 <td>
-                    <a href="" class="baca">Baca</a> |
-                    <a href="" class="download">Download</a> |
-                    <button class="edit" name="edit" onclick="openEdit(<?= $dB['id'];?>)">Edit</button> |
+                    <button class="baca" onclick="openView(<?= $dB['id'] ; ?>)">Baca</button> |
+                    <a href="#" class="download">Download</a> |
+                    <button class="edit" name="edit" onclick="openEdit(<?= $dB['id'];?>)" data-id="" data-judul="" data-gambar="" data-pencipta="" data-tahun="" data-kategori="" data-tahapan="">Edit</button> |
                     <button class="hapus" name="hapus">Hapus buku</button>
                 </td>
             </tr>

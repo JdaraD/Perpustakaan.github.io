@@ -1,5 +1,5 @@
 .buku-container {
-    margin-top: 4px;
+    margin-top: 10px;
     margin-bottom: 4px;
     display: flex;
     flex-direction: column;
@@ -113,7 +113,7 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 6px;
 }
 
 .container-form form label {
@@ -310,6 +310,35 @@ body.no-scroll {
 }
 
 /* pesan edit buku */
+
+/* overlay view */
+
+#view {
+    position: fixed;
+    display: none;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.container-view {
+    width: 80%;
+    height: 90%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.container-view iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* overlay view */
 
 /* panjang container form untuk mobile 324px */
 
