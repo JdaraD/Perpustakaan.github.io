@@ -164,8 +164,9 @@
     <!-- overlay view -->
     <div id="view">
         <div class="container-view">
-            <iframe src="" frameborder="0" style="width:100%; height:90vh;"></iframe>
+            <iframe src="" frameborder="0" class="viewPage"></iframe>
         </div>
+        <button class="closeView" onclick="closeView()">tutup</button>
     </div>
     <!-- overlay view -->
 

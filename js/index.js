@@ -114,7 +114,7 @@ function closeEdit() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const overlayView = document.getElementById('view');
-  const formContainerView = document.querySelector('.container-view');
+  const formContainerView = document.querySelector('.viewPage');
 
   overlayView.addEventListener('click', (e) => {
     // Jika area yang diklik bukan form di tengah, maka tutup
@@ -128,4 +128,10 @@ function openView(id){
   const iframe = document.querySelector('#view iframe');
   iframe.src = "viewDokumen.php?id=" + id + "&t=" + new Date().getTime(); // ✅ benar
   document.getElementById('view').style.display = "block";
+  document.body.classList.add("no-scroll");
+}
+
+function closeView() {
+  document.getElementById("view").style.display = "none";
+  document.body.classList.remove("no-scroll");
 }

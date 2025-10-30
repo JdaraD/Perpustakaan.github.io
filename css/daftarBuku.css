@@ -325,17 +325,39 @@ body.no-scroll {
 }
 
 .container-view {
-    width: 80%;
-    height: 90%;
-    background: white;
-    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 .container-view iframe {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.closeView {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 2000;
 }
 
 /* overlay view */
