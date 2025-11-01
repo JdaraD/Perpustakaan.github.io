@@ -112,31 +112,31 @@ function closeEdit() {
 
 // fungsi overlay view
 
-document.addEventListener('DOMContentLoaded', () => {
-  const overlayView = document.getElementById('view');
-  const formContainerView = document.querySelector('.viewPage');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const overlayView = document.getElementById('view');
+//   const formContainerView = document.querySelector('.viewPage');
 
-  overlayView.addEventListener('click', (e) => {
-    // Jika area yang diklik bukan form di tengah, maka tutup
-    if (!formContainerView.contains(e.target)) {
-      closeView();
-    }
-  });
-});
+//   overlayView.addEventListener('click', (e) => {
+//     // Jika area yang diklik bukan form di tengah, maka tutup
+//     if (!formContainerView.contains(e.target)) {
+//       closeView();
+//     }
+//   });
+// });
 
-function openView(fileName) {
-  const iframe = document.getElementById('pdfFrame');
-  const fileUrl = "http://localhost/perpustakaan/books/" + fileName;
-  const viewerUrl = "https://docs.google.com/gview?url=" + encodeURIComponent(fileUrl) + "&embedded=true";
+// function openView(id) {
+//   const iframe = document.getElementById('pdfFrame');
+//   const fileUrl = "http://localhost/perpustakaan/viewDokumen.php?id=" + id;
+//   const viewerUrl = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + encodeURIComponent(fileUrl);
   
-  iframe.src = viewerUrl;
-  document.getElementById('view').style.display = 'block';
-}
+//   iframe.src = viewerUrl;
+//   document.getElementById('view').style.display = 'block';
+// }
 
-function closeView() {
-  document.getElementById('view').style.display = 'none';
-  document.getElementById('pdfFrame').src = '';
-}
+// function closeView() {
+//   document.getElementById('view').style.display = 'none';
+//   document.getElementById('pdfFrame').src = '';
+// }
 
 
 // fungsi view

@@ -162,12 +162,12 @@
     <!-- pesan edit berhasil -->
 
     <!-- overlay view -->
-    <div id="view" style="display:none;">
+<!-- <div id="view" style="display:none;">
   <button class="closeView" onclick="closeView()">Tutup</button>
   <div class="container-view">
-    <iframe id="pdfFrame" frameborder="0" class="viewPage"></iframe>
+      <iframe id="pdfFrame" frameborder="0" class="viewPage"></iframe>
   </div>
-</div>
+</div> -->
     <!-- overlay view -->
 
     <div class="container-buku">
@@ -235,7 +235,7 @@
                 <td><?= $dB['buku'] ;?></td>
                 <td><?= $dB['tahapan'] ;?></td>
                 <td>
-                    <button class="baca" onclick="openView(<?= $dB['id'] ; ?>)">Baca</button> |
+                    <button class="baca" onclick="openView(<?= $dB['id'] ; ?>)" hidden>Baca</button> 
                     <button class="download" name="download" onclick="downloadFile(<?= $dB['id']; ?>)">Download</button> |
                     <button class="edit" name="edit" onclick="openEdit(<?= $dB['id'];?>)" data-id="" data-judul="" data-gambar="" data-pencipta="" data-tahun="" data-kategori="" data-tahapan="">Edit</button> |
                     <button class="hapus" name="hapus">Hapus buku</button>
