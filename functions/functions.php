@@ -1,5 +1,4 @@
 <?php 
-
     // hubungkan ke database
     $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 
@@ -223,35 +222,39 @@
     }
 
     // fungsi view dokumen
-    if (isset($_GET['id'])) {
-        $id = (int) $_GET['id'];
+    // if (isset($_GET['id'])) {
+    //     $id = (int) $_GET['id'];
 
-        $result = mysqli_query($conn, "SELECT * FROM daftarbuku WHERE id = $id");
+    //     $result = mysqli_query($conn, "SELECT * FROM daftarbuku WHERE id = $id");
 
-        if (mysqli_num_rows($result) === 1) {
-            $data = mysqli_fetch_assoc($result);
-            $file = 'books/' . $data['buku'];
+    //     if (mysqli_num_rows($result) === 1) {
+    //         $data = mysqli_fetch_assoc($result);
+    //         $file = __DIR__. 'books/' . $data['buku'];
 
-            if (!file_exists($file)) {
-                echo "File tidak ditemukan.";
-                exit;
-            }
+    //         if (!file_exists($file)) {
+    //             echo "File tidak ditemukan.";
+    //             exit;
+    //         }
 
-            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+    //         $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 
-            if ($ext === 'pdf') {
-                header('Content-type: application/pdf');
-                header('Content-Disposition: inline; filename="' . basename($file) . '"');
-                readfile($file);
-            } elseif (in_array($ext, ['doc', 'docx'])) {
-                $fileUrl = "http://localhost/projekmu/" . $file; // ganti sesuai path kamu
-                echo "<iframe src='https://docs.google.com/gview?url=$fileUrl&embedded=true' 
-                        style='width:100%;height:100vh;' frameborder='0'></iframe>";
-            } else {
-                echo "Format file tidak didukung.";
-            }
+    //         if ($ext === 'pdf') {
+    //             header('Content-type: application/pdf');
+    //             header('Content-Disposition: inline; filename="' . basename($file) . '"');
+    //             readfile($file);
+    //         } elseif (in_array($ext, ['doc', 'docx'])) {
+    //             // ✅ Perbaikan di sini
+    //             $fileUrl = "http://localhost/perpustakaan/" . $file;
+    //             echo "<iframe src='https://docs.google.com/gview?url=$fileUrl&embedded=true' 
+    //                     style='width:100%;height:100vh;' frameborder='0'></iframe>";
+    //         } else {
+    //             echo "Format file tidak didukung.";
+    //         }
 
-        } 
-    }
+    //     } else {
+    //         echo "Data buku tidak ditemukan.";
+    //     }
+    // }
+
 
 ?>
